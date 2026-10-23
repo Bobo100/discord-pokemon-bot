@@ -5,8 +5,8 @@
     "keypress": "^0.2.1",
     "prompt-sync": "^4.2.0",
     "prompts": "^2.4.2",
-    "puppeteer": "^19.3.0",
-    "puppeteer-chromium-resolver": "^19.1.0",
+    "puppeteer": "^25.16.0",
+    "puppeteer-chromium-resolver": "^25.0.0",
     "puppeteer-cmp-clicker": "^1.0.3",
     "sweetalert2": "^11.6.15",
     "user-agents": "^1.0.1229"
