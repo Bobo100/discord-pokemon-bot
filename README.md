@@ -26,4 +26,4 @@ npm start   # node ./auto_catch_javascript_version/auto_type.js
 
 ## 已知問題
 
-`npm audit` 仍有漏洞：`hcaptcha-solver` 依賴已停止維護的 `request`(critical,沒有修正版);puppeteer 要從 19 升到 24 才能清掉其餘的 high,但需要實際登入 Discord 才能驗證，所以沒有升。
+`npm audit` 仍有 high:puppeteer 19 與 puppeteer-chromium-resolver 19 帶進來的 `extract-zip` 本身沒有修正版，要把這兩個升到不再依賴它的版本才能清掉，但需要實際登入 Discord 才能驗證，所以沒有升。
