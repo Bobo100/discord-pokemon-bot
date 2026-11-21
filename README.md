@@ -24,6 +24,6 @@ npm start   # node ./auto_catch_javascript_version/auto_type.js
 
 帳號、頻道等設定在各腳本開頭；`Test/` 裡的帳密欄位只是佔位文字。
 
-## 已知問題
+## 從 puppeteer 19 升上來的注意事項
 
-`npm audit` 仍有 high:puppeteer 19 與 puppeteer-chromium-resolver 19 帶進來的 `extract-zip` 本身沒有修正版，要把這兩個升到不再依賴它的版本才能清掉，但需要實際登入 Discord 才能驗證，所以沒有升。
+puppeteer 與 puppeteer-chromium-resolver 已升到 25,宣告需要 Node 22.12 以上；`npm run build` 仍用 `pkg` 打包成 node18 的 exe,沒有測過，很可能跑不起來。以前跑過舊版的電腦，家目錄下會留著 `.pcr-stats.json`,裡面記的是舊版下載的 Chromium(例如 108),新版 puppeteer 連不上它，啟動時會等 30 秒後 timeout。第一次跑新版前先刪掉這個檔(Windows 是 `%USERPROFILE%\.pcr-stats.json`),讓 puppeteer-chromium-resolver 重新下載 Chromium;舊的 `.chromium-browser-snapshots/` 可以一起刪。

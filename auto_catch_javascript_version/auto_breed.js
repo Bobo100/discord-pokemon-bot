@@ -312,7 +312,7 @@ async function breed() {
     let last_button_id;
 
     while (!breed_status) {
-      let success_contents = await page.$x(".//article/div/div/div[6]/span");
+      let success_contents = await page.$$("xpath/" + ".//article/div/div/div[6]/span");
       let success_time;
       // 找出最後那一個成功的訊息~
 
@@ -325,7 +325,7 @@ async function breed() {
 
           // 找到成功的訊息~ 拿下ID 當作時間使用
           if (success_content.includes(auto_breed_account_data["uid"])) {
-            let success = await page.$x(
+            let success = await page.$$("xpath/" +
               ".//article/div/div/div[6]/span/../../../../.."
             );
 
@@ -342,7 +342,7 @@ async function breed() {
       //   "//button[@class='component-ifCTxY button-f2h6uQ lookFilled-yCfaCM colorPrimary-2AuQVo sizeSmall-wU2dO- grow-2sR_-F']/../../../.."
       // );
 
-      let button_contents = await page.$x(
+      let button_contents = await page.$$("xpath/" +
         './/button[contains(concat(" ",normalize-space(@class)," ")," component-ifCTxY ")][contains(concat(" ",normalize-space(@class)," ")," button-f2h6uQ ")][contains(concat(" ",normalize-space(@class)," ")," lookFilled-yCfaCM ")][contains(concat(" ",normalize-space(@class)," ")," colorPrimary-2AuQVo ")][contains(concat(" ",normalize-space(@class)," ")," sizeSmall-wU2dO- ")][contains(concat(" ",normalize-space(@class)," ")," grow-2sR_-F ")]/../../../..'
       );
 
@@ -425,7 +425,7 @@ async function breed() {
         try {
           let bread_message_flag = true;
           while (bread_message_flag) {
-            let bread_messages = await page.$x(
+            let bread_messages = await page.$$("xpath/" +
               '//*[@id="' + last_button_id + '"]/article/div/div/div[3]'
             );
             let bread_message = await page.evaluate(

@@ -217,7 +217,7 @@ async function first_time_login() {
   let article_id;
   while (true) {
     try {
-      const article = await page.$x(
+      const article = await page.$$("xpath/" +
         "//a[contains(@class, 'originalLink-Azwuo9')]/../../../../../../.."
       );
 

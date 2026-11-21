@@ -228,7 +228,7 @@ async function first_time_login() {
   let article_id;
   while (true) {
     try {
-      let article = await page2.$x(
+      let article = await page2.$$("xpath/" +
         "//a[contains(@class, 'originalLink-Azwuo9')]/../../../../../../.."
       );
       for (let i = 2; i > 0; i--) {
